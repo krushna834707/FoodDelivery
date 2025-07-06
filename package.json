@@ -1,0 +1,23 @@
+{
+  "name": "learningreact",
+  "version": "1.0.0",
+  "description": "learning react from sources",
+  "keywords": [
+    "react"
+  ],
+  "license": "ISC",
+  "author": "krushna",
+  "type": "commonjs",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "parcel": "^2.15.4"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  }
+}
