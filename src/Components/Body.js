@@ -15,10 +15,11 @@ const Body = () => {
         );
         const json = await data.json();
 
-        const restaurants = json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants || [];
+        const restaurants = json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
         setResList(restaurants);
         setFilteredList(restaurants);
     };
+
 
     return (
         <div className="body">
@@ -27,7 +28,7 @@ const Body = () => {
                     className="filter-btn"
                     onClick={() => {
                         const filtered = resList.filter(
-                            (res) => res.info?.avgRating > 4
+                            (res) => res.info?.avgRating > 4.5
                         );
                         setFilteredList(filtered);
                     }}

@@ -33,21 +33,31 @@
 .res-container {
     display: flex;
     flex-wrap: wrap;
-    margin: 5px;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
 }
 
 .res-card {
-    padding: 5px;
+    padding: 15px;
     margin: 5px;
-    width: 200px;
-    height: 300px;
-
+    width: 220px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    background-color: #fff;
 }
 
 .res-card:hover {
-    border: 1px solid black;
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    border: none;
 }
 
 .res-logo {
     width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
 }
