@@ -61,3 +61,11 @@
     object-fit: cover;
     border-radius: 8px;
 }
+
+.login-btn {
+    font-size: 75%;
+    padding: 5px;
+    margin: 5px;
+    background-color: darkgreen;
+    color: bisque;
+}
