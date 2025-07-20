@@ -1,11 +1,12 @@
 import React from 'react'
-
+import User from './User'
 const About = () => {
+
     return (
         <div>
-            <h1>About</h1>
-            <h2>This is namaste React webseries.</h2>
+            <User />
         </div>
+
     )
 }
 

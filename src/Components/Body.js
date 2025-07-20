@@ -1,6 +1,7 @@
 import RestaurantCard from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import { Link } from "react-router";
+import useOnlineStatus from "../utils/useOnlineStatus";
 const Body = () => {
 
     const [resList, setResList] = useState([]);
@@ -23,6 +24,14 @@ const Body = () => {
         setResList(restaurants);
         setFilteredList(restaurants);
     };
+
+
+    const onlineStatus = useOnlineStatus();
+    if (onlineStatus === false)
+        return (
+            <h1>internet not working..</h1>
+        )
+
 
 
     return (

@@ -1,28 +1,14 @@
 import React from 'react'
-import { useEffect, useState } from 'react'
 import { useParams } from "react-router"
-import { MENU_API } from '../utils/constants'
+import useRestaurantMenu from '../utils/useRestaurantMenu';
 
 
 const RestaurantMenu = () => {
 
-    const [resInfo, setResInfo] = useState(null);
     let { resId } = useParams();
-    //console.log(params);
 
-    useEffect(() => {
-        fetchMenu();
-    }, [])
+    const resInfo = useRestaurantMenu(resId);
 
-    const fetchMenu = async () => {
-        const data = await fetch(MENU_API + resId);
-        const json = await data.json();
-        console.log(json);
-
-
-        setResInfo(json.data);
-
-    }
     if (!resInfo) return <h2>Loading...</h2>;
 
     const { name, costForTwoMessage, cuisines, avgRating } = resInfo?.cards[2]?.card?.card?.info;
@@ -44,7 +30,7 @@ const RestaurantMenu = () => {
 
             <h2>Menu</h2>
             <ul>
-                {itemCards.map(item => <li key={item.card.info.id}>{item.card.info.name} Rs.{item.card.info.price || item.card.info.defaultPrice} </li>)}
+                {itemCards.map(item => <li key={item.card.info.id}>{item.card.info.name} Rs.{item.card.info.price / 100 || item.card.info.defaultPrice / 100} </li>)}
 
             </ul>
 
