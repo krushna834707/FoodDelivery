@@ -26,6 +26,7 @@ const RestaurantMenu = () => {
             <h3>{avgRating}</h3>
             <p>
                 {cuisines.join(", ")} {costForTwoMessage}
+                
             </p>
 
             <h2>Menu</h2>

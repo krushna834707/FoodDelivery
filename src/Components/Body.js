@@ -36,10 +36,10 @@ const Body = () => {
 
     return (
         <div className="body">
-            <div className="filter">
+            <div className="flex m-2 p-2 justify-center ">
 
                 <button
-                    className="filter-btn"
+                    className="mx-2 p-2 text-black bg-yellow-50 rounded-lg hover:bg-yellow-200"
                     onClick={() => {
                         const filtered = resList.filter(
                             (res) => res.info?.avgRating > 4.5
@@ -51,7 +51,7 @@ const Body = () => {
                 </button>
 
                 <button
-                    className="filter-btn"
+                    className="mx-2 p-2 text-black bg-yellow-50 rounded-lg hover:bg-yellow-200"
                     onClick={() => {
                         setFilteredList(resList);
                     }}
@@ -60,7 +60,7 @@ const Body = () => {
                 </button>
             </div>
 
-            <div className="res-container">
+            <div className="flex flex-wrap justify-center m-2 ">
                 {filteredList.map((restaurant) => (
                     <Link
                         key={restaurant.info.id}
